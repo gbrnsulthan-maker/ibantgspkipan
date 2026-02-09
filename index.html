@@ -8,12 +8,12 @@
   <!-- ===== CSS ===== -->
   <style>
     :root {
-      /* Monochrome blue palette - single hue with opacity/saturation variations only */
-      --primary: #0f3a6b;        /* primary blue (darkest) */
-      --text: #051428;           /* text (almost black-blue) */
-      --bg: #f0f7ff;             /* background (lightest blue tint) */
+     
+      --primary: #0f3a6b;        
+      --text: #051428;           
+      --bg: #f0f7ff;            
       --card: rgba(255,255,255,0.96);
-      --muted: #516f8f;          /* same hue, desaturated */
+      --muted: #516f8f;         
       --glass: rgba(15,58,107,0.08);
     }
 
@@ -56,7 +56,7 @@
       z-index: 1;
     }
 
-    /* container rules follow after navbar (see improved navbar styles below) */
+ 
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -64,9 +64,7 @@
     }
 
     /* ===== Header ===== */
-    /* header styles replaced by profile card layout (see updated rules above) */
-
-    /* Header grid and profile card */
+   
     header {
       padding: 56px 48px;
       position: relative;
@@ -452,7 +450,7 @@
     .contact-item svg { width:18px; height:18px; opacity:0.85 }
     .contact-item span { display:inline-block }
 
-    /* header-specific badge style */
+   
     header .badge {
       background: linear-gradient(135deg, rgba(15,58,107,0.95) 0%, rgba(15,58,107,0.75) 100%);
       color: white;
@@ -506,7 +504,7 @@
     header .badge:nth-child(4) { animation-delay: 0.9s; }
     header .badge:nth-child(n+5) { animation-delay: 1s; }
 
-    /* animated background gradient */
+    
     body::before {
       content: '';
       position: fixed;
@@ -527,7 +525,7 @@
       100% { transform: scale(1) translateY(0); filter: hue-rotate(0deg); }
     }
 
-    /* subtle moving blobs layered behind header */
+ 
     header::before {
       content: '';
       position: absolute;
@@ -543,7 +541,7 @@
       animation: blobFloat 8s ease-in-out infinite;
     }
 
-    /* subtle sheen overlay that slides across the header for interest */
+
     header::after {
       content: '';
       position: absolute;
@@ -578,7 +576,7 @@
       transition: transform 260ms ease, box-shadow 260ms ease;
     }
 
-    /* animated badges (lighter, colored) */
+    
     .badge {
       background: linear-gradient(135deg, rgba(15,58,107,0.9) 0%, rgba(15,58,107,0.72) 100%);
       color: white;
@@ -620,7 +618,7 @@
       100% { box-shadow: 0 20px 48px rgba(15,58,107,0.26), inset 0 1px 0 rgba(255,255,255,0.18), 0 0 40px 12px rgba(15,58,107,0); }
     }
 
-    /* navbar underline indicator */
+
     nav a::after {
       content: '';
       display: block;
@@ -640,7 +638,7 @@
       .contact-list { align-items:center }
     }
 
-    /* ===== Sections ===== */
+    
     section {
       background: var(--card);
       padding: 40px;
@@ -768,7 +766,7 @@
       font-size: 0.98em;
     }
 
-    /* ===== Counter Animation ===== */
+   
     .counter {
       font-weight: 700;
       color: var(--primary);
@@ -1682,7 +1680,7 @@
   <script>
     
 
-    // Hamburger Menu Toggle
+   
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
 
@@ -1690,7 +1688,7 @@
       navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
+  
     const menuLinks = navMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -1698,7 +1696,7 @@
       });
     });
 
-    // Smooth scroll for navbar links
+  
     menuLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -1710,7 +1708,7 @@
       });
     });
 
-    // Scroll to Top Button
+    
     const scrollTopBtn = document.getElementById('scrollTop');
 
     window.addEventListener('scroll', () => {
@@ -1728,7 +1726,7 @@
       });
     }
 
-    // Add animation to sections on scroll
+   
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1743,7 +1741,7 @@
       observer.observe(section);
     });
 
-    // Highlight navbar links when their section is visible
+  
     const navLinks = document.querySelectorAll('#navMenu a');
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1757,7 +1755,7 @@
     }, { threshold: 0.45 });
     sections.forEach(s => sectionObserver.observe(s));
 
-    // Add CSS animation
+ 
     const style = document.createElement('style');
     style.textContent = `
       @keyframes slideUp {
@@ -1821,7 +1819,6 @@
     `;
     document.head.appendChild(style);
 
-    // Animate skill progress bars when they come into view
     const skillBars = document.querySelectorAll('.skill-progress');
     const skillObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1837,7 +1834,6 @@
       skillObserver.observe(bar);
     });
 
-    // Reveal badges with slight stagger on load
     document.addEventListener('DOMContentLoaded', () => {
       const badges = document.querySelectorAll('.badge');
       badges.forEach((b, i) => {
@@ -1845,7 +1841,7 @@
       });
     });
 
-    // Add ripple effect animation style
+ 
     const rippleStyle = document.createElement('style');
     rippleStyle.textContent = `
       @keyframes ripple-animation {
@@ -1857,7 +1853,7 @@
     `;
     document.head.appendChild(rippleStyle);
 
-    // Add click ripple effect to interactive elements
+  
     document.querySelectorAll('nav a, footer a, .scroll-to-top').forEach(el => {
       el.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
@@ -1883,14 +1879,14 @@
       });
     });
 
-    // Add mouse cursor glow effect
+  
     let mouseX = 0, mouseY = 0;
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     });
 
-    // Add interactive hover effect on sections
+   
     document.querySelectorAll('section').forEach(section => {
       section.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-3px)';
@@ -1900,7 +1896,7 @@
       });
     });
 
-    // Add skills hover effect
+ 
     document.querySelectorAll('.skill-item-wrapper').forEach(skill => {
       skill.addEventListener('mouseenter', function() {
         this.style.background = 'rgba(30, 58, 138, 0.05)';
@@ -1916,3 +1912,4 @@
 
 </body>
 </html>
+
